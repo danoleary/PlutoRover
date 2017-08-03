@@ -13,6 +13,7 @@ let ``when the rover is facing north and it turns left then its new direction is
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute L rover
@@ -27,6 +28,7 @@ let ``when the rover is facing north and it turns right then its new direction i
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute R rover
@@ -41,6 +43,7 @@ let ``when the rover is facing south and it turns left then its new direction is
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute L rover
@@ -55,6 +58,7 @@ let ``when the rover is facing south and it turns right then its new direction i
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute R rover
@@ -69,6 +73,7 @@ let ``when the rover is facing east and it turns left then its new direction is 
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute L rover
@@ -83,6 +88,7 @@ let ``when the rover is facing east and it turns right then its new direction is
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute R rover
@@ -97,6 +103,7 @@ let ``when the rover is facing west and it turns left then its new direction is 
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute L rover
@@ -111,6 +118,7 @@ let ``when the rover is facing west and it turns right then its new direction is
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute R rover

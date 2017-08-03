@@ -13,6 +13,7 @@ let ``when the rover moves forwards over the northern edge of the grid then it a
         grid = {
             height = 100
             width = 100
+            obstacles = []
         }
     }
 
@@ -29,6 +30,7 @@ let ``when the rover moves backwards over the northern edge of the grid then it 
         grid = {
             height = 100
             width = 100
+            obstacles = []
         }
     }
 
@@ -45,6 +47,7 @@ let ``when the rover moves forwards over the southern edge of the grid then it a
         grid = {
             height = 100
             width = 100
+            obstacles = []
         }
     }
 
@@ -61,6 +64,7 @@ let ``when the rover moves backwards over the southern edge of the grid then it 
         grid = {
             height = 100
             width = 100
+            obstacles = []
         }
     }
 
@@ -77,6 +81,7 @@ let ``when the rover moves forward over the eastern edge of the grid then it app
         grid = {
             height = 100
             width = 100
+            obstacles = []
         }
     }
 
@@ -93,6 +98,7 @@ let ``when the rover moves backwards over the eastern edge of the grid then it a
         grid = {
             height = 100
             width = 100
+            obstacles = []
         }
     }
 
@@ -109,6 +115,7 @@ let ``when the rover moves forward over the western edge of the grid then it app
         grid = {
             height = 100
             width = 100
+            obstacles = []
         }
     }
 
@@ -125,6 +132,7 @@ let ``when the rover moves backwards over the western edge of the grid then it a
         grid = {
             height = 100
             width = 100
+            obstacles = []
         }
     }
 

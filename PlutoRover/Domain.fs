@@ -4,9 +4,15 @@ module Domain =
     
     type Direction = North | South | East | West
 
+    type Obstacle = {
+        x : int
+        y : int
+    }
+
     type Grid = {
         height : int
         width : int
+        obstacles : Obstacle list
     }
 
     type Rover = {
@@ -19,18 +25,30 @@ module Domain =
     type Command = F | B | L | R
 
     let execute command rover = 
-        let moveNorth rover = 
+        let moveNorth rover =
             let newY = if rover.y = rover.grid.height then 0 else rover.y + 1
-            { rover with y = newY}
-        let moveSouth rover = 
+            if List.exists (fun o -> o = {x = rover.x; y = newY} ) rover.grid.obstacles then
+                rover
+            else
+                { rover with y = newY}
+        let moveSouth rover =
             let newY = if rover.y = 0 then rover.grid.height else rover.y - 1
-            { rover with y = newY}
+            if List.exists (fun o -> o = {x = rover.x; y = newY} ) rover.grid.obstacles then
+                rover
+            else
+                { rover with y = newY}
         let moveEast rover = 
             let newX = if rover.x = rover.grid.width then 0 else rover.x + 1
-            { rover with x = newX }
+            if List.exists (fun o -> o = {x = newX; y = rover.y} ) rover.grid.obstacles then
+                rover
+            else
+                { rover with x = newX }
         let moveWest rover = 
             let newX = if rover.x = 0 then rover.grid.width else rover.x - 1
-            { rover with x = newX }
+            if List.exists (fun o -> o = {x = newX; y = rover.y} ) rover.grid.obstacles then
+                rover
+            else
+                { rover with x = newX }
         let turnNorth rover = { rover with direction = North}
         let turnSouth rover = { rover with direction = South}
         let turnEast rover = { rover with direction = East}

@@ -13,6 +13,7 @@ let ``when the rover is facing north and it moves forwards then its y co-ordinat
         grid = { 
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute F rover
@@ -27,6 +28,7 @@ let ``when the rover is facing north and it moves backwards then its y co-ordina
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute B rover
@@ -41,6 +43,7 @@ let ``when the rover is facing south and it moves forwards then its y co-ordinat
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute F rover
@@ -55,6 +58,7 @@ let ``when the rover is facing south and it moves backwards then its y co-ordina
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute B rover
@@ -69,6 +73,7 @@ let ``when the rover is facing east and it moves forwards then its x co-ordinate
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute F rover
@@ -83,6 +88,7 @@ let ``when the rover is facing east and it moves backwards then its x co-ordinat
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute B rover
@@ -97,6 +103,7 @@ let ``when the rover is facing west and it moves forwards then its x co-ordinate
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute F rover
@@ -111,6 +118,7 @@ let ``when the rover is facing west and it moves backwards then its x co-ordinat
         grid = {
             height = 10
             width = 10
+            obstacles = []
         }
     }
     let rover' = execute B rover
