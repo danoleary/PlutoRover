@@ -10,24 +10,24 @@ module Domain =
         direction : Direction
     }
 
-    type Command = F | B
+    type Command = F | B | L | R
 
     let execute command rover = 
         let moveNorth rover = { rover with y = rover.y + 1}
         let moveSouth rover = { rover with y = rover.y - 1}
         let moveEast rover = { rover with x = rover.x + 1}
         let moveWest rover = { rover with x = rover.x - 1}
-        match command with
-        | F -> 
-            match rover.direction with
-            | North -> moveNorth rover
-            | South -> moveSouth rover 
-            | East -> moveEast rover
-            | West -> moveWest rover 
-        | B -> 
-            match rover.direction with
-            | North -> moveSouth rover 
-            | South -> moveNorth rover
-            | East -> moveWest rover 
-            | West -> moveEast rover
+        let turnNorth rover = { rover with direction = North}
+        let turnSouth rover = { rover with direction = South}
+        let turnEast rover = { rover with direction = East}
+        let turnWest rover = { rover with direction = West}
+        match command, rover.direction with
+        | F, North | B, South -> moveNorth rover
+        | F, South | B, North -> moveSouth rover
+        | F, East | B, West -> moveEast rover
+        | F, West | B, East -> moveWest rover
+        | L, North | R, South -> turnWest rover
+        | L, South | R, North -> turnEast rover
+        | L, East | R, West -> turnNorth rover
+        | L, West | R, East -> turnSouth rover 
 
