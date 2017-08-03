@@ -4,19 +4,33 @@ module Domain =
     
     type Direction = North | South | East | West
 
+    type Grid = {
+        height : int
+        width : int
+    }
+
     type Rover = {
         x : int
         y : int
         direction : Direction
+        grid : Grid
     }
 
     type Command = F | B | L | R
 
     let execute command rover = 
-        let moveNorth rover = { rover with y = rover.y + 1}
-        let moveSouth rover = { rover with y = rover.y - 1}
-        let moveEast rover = { rover with x = rover.x + 1}
-        let moveWest rover = { rover with x = rover.x - 1}
+        let moveNorth rover = 
+            let newY = if rover.y = rover.grid.height then 0 else rover.y + 1
+            { rover with y = newY}
+        let moveSouth rover = 
+            let newY = if rover.y = 0 then rover.grid.height else rover.y - 1
+            { rover with y = newY}
+        let moveEast rover = 
+            let newX = if rover.x = rover.grid.width then 0 else rover.x + 1
+            { rover with x = newX }
+        let moveWest rover = 
+            let newX = if rover.x = 0 then rover.grid.width else rover.x - 1
+            { rover with x = newX }
         let turnNorth rover = { rover with direction = North}
         let turnSouth rover = { rover with direction = South}
         let turnEast rover = { rover with direction = East}
