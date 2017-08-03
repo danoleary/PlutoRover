@@ -15,6 +15,7 @@ let ``when the rover is facing north and it turns left then its new direction is
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute L rover
     Assert.Equal (rover', { rover with direction  = West })
@@ -30,6 +31,7 @@ let ``when the rover is facing north and it turns right then its new direction i
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute R rover
     Assert.Equal (rover', { rover with direction = East })
@@ -45,6 +47,7 @@ let ``when the rover is facing south and it turns left then its new direction is
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute L rover
     Assert.Equal (rover', { rover with direction = East })
@@ -60,6 +63,7 @@ let ``when the rover is facing south and it turns right then its new direction i
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute R rover
     Assert.Equal (rover', { rover with direction = West })
@@ -75,6 +79,7 @@ let ``when the rover is facing east and it turns left then its new direction is 
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute L rover
     Assert.Equal (rover', { rover with direction = North })
@@ -90,6 +95,7 @@ let ``when the rover is facing east and it turns right then its new direction is
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute R rover
     Assert.Equal (rover', { rover with direction = South })
@@ -105,6 +111,7 @@ let ``when the rover is facing west and it turns left then its new direction is 
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute L rover
     Assert.Equal (rover', { rover with direction = South })
@@ -120,6 +127,7 @@ let ``when the rover is facing west and it turns right then its new direction is
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute R rover
     Assert.Equal (rover', { rover with direction = North })

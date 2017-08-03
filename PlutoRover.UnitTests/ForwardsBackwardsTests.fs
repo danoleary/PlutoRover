@@ -15,6 +15,7 @@ let ``when the rover is facing north and it moves forwards then its y co-ordinat
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute F rover
     Assert.Equal (rover', {rover with y = 1})
@@ -30,6 +31,7 @@ let ``when the rover is facing north and it moves backwards then its y co-ordina
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute B rover
     Assert.Equal (rover', {rover with y = 0})
@@ -45,6 +47,7 @@ let ``when the rover is facing south and it moves forwards then its y co-ordinat
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute F rover
     Assert.Equal (rover', {rover with y = 0})
@@ -60,6 +63,7 @@ let ``when the rover is facing south and it moves backwards then its y co-ordina
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute B rover
     Assert.Equal (rover', {rover with y = 1})
@@ -75,6 +79,7 @@ let ``when the rover is facing east and it moves forwards then its x co-ordinate
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute F rover
     Assert.Equal (rover', {rover with x = 1})
@@ -90,6 +95,7 @@ let ``when the rover is facing east and it moves backwards then its x co-ordinat
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute B rover
     Assert.Equal (rover', {rover with x = 0})
@@ -104,7 +110,9 @@ let ``when the rover is facing west and it moves forwards then its x co-ordinate
             height = 10
             width = 10
             obstacles = []
+            
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute F rover
     Assert.Equal (rover', {rover with x = 0})
@@ -120,6 +128,7 @@ let ``when the rover is facing west and it moves backwards then its x co-ordinat
             width = 10
             obstacles = []
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute B rover
     Assert.Equal (rover', {rover with x = 1})

@@ -17,9 +17,10 @@ let ``when there is an obstacle in the rovers path to the north then the rovers 
                 { x = 0; y =1 }
             ]
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute F rover
-    Assert.Equal (rover, rover')
+    Assert.Equal ({rover with availableCommands = []}, rover')
 
 [<Fact>]
 let ``when there is an obstacle in the rovers path to the south then the rovers position does not change and the available commands list is empty`` () =
@@ -34,9 +35,10 @@ let ``when there is an obstacle in the rovers path to the south then the rovers 
                 { x = 0; y =10 }
             ]
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute F rover
-    Assert.Equal (rover, rover')
+    Assert.Equal ({rover with availableCommands = []}, rover')
 
 [<Fact>]
 let ``when there is an obstacle in the rovers path to the east then the rovers position does not change and the available commands list is empty`` () =
@@ -51,9 +53,10 @@ let ``when there is an obstacle in the rovers path to the east then the rovers p
                 { x = 1; y = 0}
             ]
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute F rover
-    Assert.Equal (rover, rover')
+    Assert.Equal ({rover with availableCommands = []}, rover')
 
 [<Fact>]
 let ``when there is an obstacle in the rovers path to the west then the rovers position does not change and the available commands list is empty`` () =
@@ -68,6 +71,7 @@ let ``when there is an obstacle in the rovers path to the west then the rovers p
                 { x = 10; y = 0}
             ]
         }
+        availableCommands = [F; B; L; R]
     }
     let rover' = execute F rover
-    Assert.Equal (rover, rover')
+    Assert.Equal ({rover with availableCommands = []}, rover')
